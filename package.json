@@ -1,0 +1,17 @@
+{
+  "name": "pokespot",
+  "version": "1.0.0",
+  "description": "Utility scripts for importing Pokedex data into HubSpot via API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "file-exists": "^5.0.1",
+    "node-fetch": "^2.1.2",
+    "pokedex-promise-v2": "^3.1.1"
+  }
+}
