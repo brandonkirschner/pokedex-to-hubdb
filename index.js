@@ -27,3 +27,4 @@ server.listen(port, (err) => {
 initScript.getPokemon()
 const hubspotAPI = require('./hubspotAPI.js')
 		hubspotAPI.constructPokemon()
+		
