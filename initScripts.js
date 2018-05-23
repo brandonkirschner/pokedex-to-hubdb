@@ -10,10 +10,10 @@ function Pokemon(name, weight, height, sprite, types, id) {
     this.id = id;
 }
 
-module.exports.getPokemon = function (options = {limit: 3, stats: []}) {
+module.exports.getPokemon = function (options = {start: 1, limit: 3, stats: []}) {
 	let endpoint = 'http://pokeapi.co/api/v2/pokemon/'
 	let pokemonArr = []
-	for(var i = 1; i < options.limit + 1; i++) {
+	for(var i = options.start; i < options.limit + 1; i++) {
 		let url = endpoint + i + '/'
 		console.log(url)
 		pokemonArr.push(
