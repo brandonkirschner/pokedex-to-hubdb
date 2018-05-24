@@ -45,7 +45,7 @@ module.exports.constructPokemon = function() {
             })
         }
         // This is where you select the HubDB you want to POST to
-        createTableRow(697842, pokemon)
+        createTableRow(697537, pokemon)
     }
 
 }

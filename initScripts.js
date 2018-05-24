@@ -15,10 +15,10 @@ module.exports.getPokemon = function(options = { start: 1, limit: 50, stats: [] 
     let pokemonArr = []
     for (var i = options.start; i < options.limit + 1; i++) {
         let url = endpoint + i + '/'
-        console.log(url)
         pokemonArr.push(
             fetch(url)
             .then(function(res) {
+            	console.log(`${res.status} ${url}`);
                 return res.json()
             })
             .catch(err => console.error(err))
