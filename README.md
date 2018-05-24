@@ -26,6 +26,6 @@
 8. Run `node index.js` again to post the data to HubDB.
 
 ## Warning
-#### Currently 1-150 pokemon is not possible. There is an issue where at some point in the loop an invalid JSON response is returning.
+#### Currently 1-150 pokemon is not possible. There is an issue where at some point in the loop an invalid JSON response is returning (due to rnadom 504 errors on Pokedex's API.
 #### Be careful of rate limiting (will work on that)
 

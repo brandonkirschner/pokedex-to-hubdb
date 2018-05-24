@@ -10,7 +10,7 @@ function Pokemon(name, weight, height, sprite, types, id) {
     this.id = id;
 }
 
-module.exports.getPokemon = function(options = { start: 1, limit: 50, stats: [] }) {
+module.exports.getPokemon = function(options = { start: 1, limit: 150, stats: [] }) {
     let endpoint = 'http://pokeapi.co/api/v2/pokemon/'
     let pokemonArr = []
     for (var i = options.start; i < options.limit + 1; i++) {
