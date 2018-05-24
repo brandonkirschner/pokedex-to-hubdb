@@ -22,29 +22,30 @@ module.exports.constructPokemon = function() {
         if (pokemonJSON[i].types.length == 2) {
             var pokemon = JSON.stringify({
                 "values": {
-                    "1": pokemonJSON[i].name,
-                    "2": pokemonJSON[i].weight,
-                    "3": pokemonJSON[i].height,
-                    "4": pokemonJSON[i].sprite,
-                    "5": pokemonJSON[i].types[1].type.name,
-                    "6": pokemonJSON[i].types[0].type.name,
-                    "7": pokemonJSON[i].id
+                	"1": pokemonJSON[i].id,
+                    "2": pokemonJSON[i].name,
+                    "3": pokemonJSON[i].weight,
+                    "4": pokemonJSON[i].height,
+                    "5": pokemonJSON[i].sprite,
+                    "6": pokemonJSON[i].types[1].type.name,
+                    "7": pokemonJSON[i].types[0].type.name
+                    
                 }
             })
         } else {
             var pokemon = JSON.stringify({
                 "values": {
-                    "1": pokemonJSON[i].name,
-                    "2": pokemonJSON[i].weight,
-                    "3": pokemonJSON[i].height,
-                    "4": pokemonJSON[i].sprite,
-                    "5": pokemonJSON[i].types[0].type.name,
-                    "7": pokemonJSON[i].id
+                	"1": pokemonJSON[i].id,
+                    "2": pokemonJSON[i].name,
+                    "3": pokemonJSON[i].weight,
+                    "4": pokemonJSON[i].height,
+                    "5": pokemonJSON[i].sprite,
+                    "6": pokemonJSON[i].types[0].type.name
                 }
             })
         }
         // This is where you select the HubDB you want to POST to
-        createTableRow(697486, pokemon)
+        createTableRow(697842, pokemon)
     }
 
 }

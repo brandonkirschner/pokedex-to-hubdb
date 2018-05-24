@@ -12,5 +12,8 @@
 4. Run `npm install` in the root of the project using a CLI
 5. Run `node index.js` to get import the pokemon. You will see "Save Completed" in the CLI's console when the pokemon.json file has been updated with the pokemon
 6. Open up `hubspotAPI.js` and update `createTableRow(697486, pokemon)` with the ID of the HubDB table you wish to publish to.
-7. Run `node index.js` again to post the data to HubDB. 
+7. Run `node index.js` again to post the data to HubDB.
+
+## Warning
+#### Currently 1-150 pokemon is not possible. There is an issue where at some point in the loop an invalid JSON response is returning 
 
