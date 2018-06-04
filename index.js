@@ -31,6 +31,8 @@ function createFile(filename) {
         }
     });
 }
+    	createFile('./pokemon.json')
+    	var json = require('./pokemon.json')
 
 const getQuestions = [
   {
@@ -66,7 +68,6 @@ program
         	let end = parseInt(answers['end'])
         	getPokemon.recursiveFetch(start, end)
         })
-        // getPokemon.recursiveFetch(parseInt(start), parseInt(end))
     });
 
 program
@@ -74,19 +75,10 @@ program
     .alias('s')
     .description('Send Pokemon to HubDB. HubID must be specified. Run node index.js get before running this command.')
     .action(function(hubdb) {
-    	createFile('./pokemon.json')
-    	let json = require('./pokemon.json')
         prompt(sendQuestion).then(function(answers){
         	let hubdb = parseInt(answers['hubdb'])
         	hubspotAPI.constructPokemon(json, parseInt(hubdb))
         })
     });
-
-// if(json.length < 1) {
-// 	getPokemon.recursiveFetch(1, 251)
-// }
-// else {
-// 	hubspotAPI.constructPokemon(json)
-// }
 
 program.parse(process.argv);
