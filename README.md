@@ -7,8 +7,8 @@
 
 ## HubDB Requirements
 #### This script requires a HubDB table with the following columns (in the order from left to right):
-1. Number
-2. Name
+1. Name
+2. Number
 3. Weight
 4. Height
 5. Sprite
@@ -20,12 +20,6 @@
 2. Create a .env file in the root of the project
 3. Open the .env on a code/text editor and add `API_KEY=YOUR-ACTUAL-API-KEY-GOES-HERE`
 4. Run `npm install` in the root of the project using a CLI
-5. Run `node index.js` to get import the pokemon. You will see "Save Completed" in the CLI's console when the pokemon.json file has been updated with the pokemon
-6. Open up `initScrips.js`. On line 13 you can configure the start and limit of the request (e.g. 1-150)
-7. Open up `hubspotAPI.js` and update `createTableRow(697486, pokemon)` with the ID of the HubDB table you wish to publish to.
-8. Run `node index.js` again to post the data to HubDB.
-
-## Warning
-#### Currently 1-150 pokemon is not possible. There is an issue where at some point in the loop an invalid JSON response is returning (due to rnadom 504 errors on Pokedex's API.
-#### Be careful of rate limiting (will work on that)
+5. Run `node index.js g` to begin the fetch process. A prompt will begin, asking you for the starting pokemon number and the ending pokemon number (e.g. 1, 150). You will see "Save Completed" in the CLI's console when the pokemon.json file has been updated with the pokemon
+6. Run `node index.js s` to begin the send to HubDB process. A prompt will begin, asking for the HubDB's ID. When you enter the HubDB's ID, the script will begin sending (POST) the pokemon to the specified HubDB.
 
