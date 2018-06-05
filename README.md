@@ -15,6 +15,8 @@
 6. Type 1
 7. Type 2
 
+Make sure your HubDB table is published!
+
 ## Instructions
 1. Clone repo or download zip and extract folder
 2. Create a .env file in the root of the project

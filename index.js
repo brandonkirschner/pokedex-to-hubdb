@@ -21,7 +21,7 @@ const server = http.createServer(requestHandler)
 
 console.log(chalk.green('Welcome to the Pokedex to HubDB Utility Script!'))
 console.log(chalk.green('Below are two commands that can be used:\n'))
-console.log("1. " + chalk.red("node index.js a") + " - used to fetch the pokemon. Start and end pokemon must be specified by number")
+console.log("1. " + chalk.red("node index.js g") + " - used to fetch the pokemon. Start and end pokemon must be specified by number")
 console.log("2. " + chalk.red("node index.js s") + " - used to send pokemon to a hubdb table. Id of the HubDB table can be specified by number")
 console.log("\nA " + chalk.red(".env") + " file in the root of this project, with your " + chalk.red("HubSpot API Key") + ", is required")
 
@@ -87,7 +87,7 @@ program
         if (cache[0]) {
             prompt(sendQuestion).then(function(answers) {
                 let hubdb = parseInt(answers['hubdb'])
-                hubspotAPI.constructPokemon(json, parseInt(hubdb))
+                hubspotAPI.constructPokemon(cache, parseInt(hubdb))
             })
         } else {
             console.log("No Pokemon found. Run 'node index.js a' to catch some pokemon!")
