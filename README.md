@@ -1,9 +1,7 @@
 # WIP!
 # Pokedex to HubDB
-#### A script for downloading Pokemon data and uploading them to HubSpot's [HubDB](https://designers.hubspot.com/docs/tools/hubdb)
 
-## Description
-##### A nodejs script that downloads (GETs) Pokemon from the [Pokéapi](https://pokeapi.co/) and uploads (POSTs) them to a HubSpot HubDB table.
+##### A node.js script that fetches Pokemon from the [Pokéapi](https://pokeapi.co/) and uploads them to a HubSpot [HubDB](https://designers.hubspot.com/docs/tools/hubdb) table.
 
 ## HubDB Requirements
 #### This script requires a HubDB table with the following columns (in the order from left to right):
