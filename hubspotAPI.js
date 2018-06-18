@@ -16,38 +16,40 @@ function createTableRow(id, data) {
         .catch(err => console.error(err))
 }
 
-var constructPokemon = function(data, hubdb) {
-    for (i in data) {
-        if (data[i].types.length == 2) {
-            var pokemon = JSON.stringify({
-                "values": {
-                    "1": data[i].name,
-                    "2": data[i].id,
-                    "3": data[i].weight,
-                    "4": data[i].height,
-                    "5": data[i].sprite,
-                    "6": data[i].types[1].type.name,
-                    "7": data[i].types[0].type.name,
-                    "8": data[i].types[1].type.name + " " + data[i].types[0].type.name
+function constructAndSendPokemon(data, hubdb) {
+    if (data.types.length == 2) {
+        var pokemon = JSON.stringify({
+            "values": {
+                "1": data.name,
+                "2": data.id,
+                "3": data.weight,
+                "4": data.height,
+                "5": data.sprite,
+                "6": data.types[1].type.name,
+                "7": data.types[0].type.name,
+                "8": data.types[1].type.name + " " + data.types[0].type.name
 
-                }
-            })
-        } else {
-            var pokemon = JSON.stringify({
-                "values": {
-                    "1": data[i].name,
-                    "2": data[i].id,
-                    "3": data[i].weight,
-                    "4": data[i].height,
-                    "5": data[i].sprite,
-                    "6": data[i].types[0].type.name,
-                    "8": data[i].types[0].type.name
-                }
-            })
-        }
-        createTableRow(hubdb, pokemon)
+            }
+        })
+    } else {
+        var pokemon = JSON.stringify({
+            "values": {
+                "1": data.name,
+                "2": data.id,
+                "3": data.weight,
+                "4": data.height,
+                "5": data.sprite,
+                "6": data.types[0].type.name,
+                "8": data.types[0].type.name
+            }
+        })
     }
-    return
+    createTableRow(hubdb, pokemon)
 }
 
-module.exports = { constructPokemon }
+
+var requestWrapper = function(data, hubdb) {
+	Array.isArray(data) ? data.forEach( function(e) { constructAndSendPokemon(e) }) : constructAndSendPokemon(data)
+}
+
+module.exports = { requestWrapper }
