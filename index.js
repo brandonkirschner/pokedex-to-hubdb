@@ -12,7 +12,6 @@ const script = require('./script.js')
 const http = require('http')
 const port = 3000
 
-
 const requestHandler = (request, response) => {
     console.log(request.url)
     response.end('Hello Node.js Server!')
@@ -35,12 +34,12 @@ function createFile(filename) {
 }
 
 var singleScript = function() {
-	 createFile('./pokemon.json')
+    createFile('./pokemon.json')
     prompt(singleScriptQuestions).then(function(answers) {
         let start = parseInt(answers['start'])
         let end = parseInt(answers['end'])
         let hubid = parseInt(answers['hubid'])
-        	script.recursiveFetch('http://pokeapi.co/api/v2/pokemon/', start, end, hubid)
+        script.recursiveFetch('http://pokeapi.co/api/v2/pokemon/', start, end, hubid)
     })
 }
 
@@ -66,7 +65,7 @@ var postPokemon = function() {
     }
 };
 
-createFile('./pokemon.json') 
+createFile('./pokemon.json')
 
 const singleScriptQuestions = [{
         type: 'input',
@@ -107,8 +106,7 @@ const sendQuestion = [{
 const introQuestion = [{
     type: 'input',
     name: 'intro',
-    message: 
-`Type the number for the script you would like to run:\n
+    message: `Type the number for the script you would like to run:\n
 1. ${chalk.green('Download and upload')}\nThis will download the pokemon from PokedexAPI and upload them to the HubDB. A pokemon.json file, containing all the pokemon, will be saved\n
 2. ${chalk.green('Download the Pokemon')}\nThis will download the pokemon from PokedexAPI and save them all to a pokemon.json file\n
 3. ${chalk.green('Upload the Pokemon')}\nThis will upload the pokemon in the pokemon.json to a HubDB table based on ID.\n`
@@ -152,16 +150,16 @@ console.log(chalk.green('Welcome to the Pokedex to HubDB Utility Script!\n'))
 
 function intro() {
     prompt(introQuestion).then(function(answer) {
-    	let input = parseInt(answer.intro)
+        let input = parseInt(answer.intro)
         switch (input) {
             case 1:
                 singleScript()
                 break;
             case 2:
-            	getPokemon()
+                getPokemon()
                 break;
             case 3:
-            	postPokemon()
+                postPokemon()
                 break;
             default:
                 // statements_def

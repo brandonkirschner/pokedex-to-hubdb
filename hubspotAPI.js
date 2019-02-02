@@ -50,6 +50,7 @@ function constructAndSendPokemon(data, hubdb) {
 
 var requestWrapper = function(data, hubdb) {
 	Array.isArray(data) ? data.forEach( function(e) { constructAndSendPokemon(e) }) : constructAndSendPokemon(data)
+	return
 }
 
 module.exports = { requestWrapper }
